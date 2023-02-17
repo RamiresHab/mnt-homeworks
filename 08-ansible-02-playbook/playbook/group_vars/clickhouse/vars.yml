@@ -1,6 +1,11 @@
 ---
 clickhouse_version: "22.3.3.44"
 clickhouse_packages:
-  - clickhouse-client
-  - clickhouse-server
-  - clickhouse-common-static
+  - name: clickhouse-common-static
+    arch: amd64
+  - name: clickhouse-client
+    arch: all
+  - name: clickhouse-server
+    arch: all
+vector_version: "0.27.0"
+vector_package: vector

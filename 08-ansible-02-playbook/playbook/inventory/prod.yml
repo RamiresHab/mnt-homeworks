@@ -2,4 +2,5 @@
 clickhouse:
   hosts:
     clickhouse-01:
-      ansible_host: <IP_here>
+      ansible_host: 51.250.84.39
+      ansible_user: roman
