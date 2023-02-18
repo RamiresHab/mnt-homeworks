@@ -146,6 +146,11 @@ vector-01                  : ok=3    changed=0    unreachable=0    failed=0    s
 ```
 
 9. Подготовьте README.md файл по своему playbook. В нём должно быть описано: что делает playbook, какие у него есть параметры и теги.
+
+```
+Плейбоок site.yml запускается командой "ansible-playbook -i inventory/prod.yml site.yml". У него есть инвентори по адресу inventory/prod.yml, в котором указаны три группы серверов: clickhouse, lighthouse и vector. Плейбук устанавливает и запускает clickhouse на группу серверов clickhouse, vector на группу серверов vector и nginx со статическим сайтом lighthouse на группу серверов lighthouse. Версии clickhouse и vector указываются в group_vars, там же указываются компоненты этого софта, которые мы хотим использовать. Если мы хотим запустить плейбук только на установку clickhouse, нам надо указать "--tags clickhouse" при запуске плейбука. Для lighthouse надо "--tags lighthouse", для vector "--tags vector". Тэги можно указывать через запятую, если нам надо установить больше одного продукта. В template/lighthouse.j2 содержится конфиг nginx для lighthouse.
+```
+
 10. Готовый playbook выложите в свой репозиторий, поставьте тег `08-ansible-03-yandex` на фиксирующий коммит, в ответ предоставьте ссылку на него.
 
 ---
