@@ -1,3 +1,36 @@
+## Плейбук
+Этот плейбук устанавливает СУБД Clickhouse, сервис Vector и lighthouse для просмотра собранных логов.
+Для запуска плейбука используется команда:
+
+```
+ansible-playbook -i inventory/prod.yml site.yml
+```
+
+## Требования
+Для запуска плейбука нужен ansible версии не ниже 2.10. Для установки пакетов нужны сервера под управлением Ubuntu 22.04 и выше.
+
+## Инвентори
+В inventory/prod.yml нужно внести адреса серверов, на которые будет устанавливаться софт и пользователей, под которыми ansible будет ходить на эти сервера. 
+
+| Name           | Default Value | Description                        |
+| -------------- | ------------- | -----------------------------------|
+| `clickhouse_version` | 22.3.3.44 | Версия clickhouse |
+| `clickhouse_packages.name` | clickhouse-common-static, clickhouse-client, clickhouse-server | Названия пакетов для установки clickhouse  |
+| `vector_version` | 0.27.0 | Версия vector |
+| `vector_package` | vector | название пакета для установкиvector |
+
+  
+## Темплейты
+В template/lighthouse.j2 содержится конфиг nginx для lighthouse.
+
+## Тэги
+В плейбуке прописаны следующие тэги:
+ * для установки clickhouse можно использовать --tag clickhouse;
+ * для установки vector-role можно использовать --tag vector;
+ * для установки lighthouse-role можно использовать --tag lighthouse
+
+-------
+
 # Домашнее задание к занятию "3. Использование Yandex Cloud"
 
 ## Подготовка к выполнению
