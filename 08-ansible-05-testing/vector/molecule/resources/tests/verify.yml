@@ -1,0 +1,14 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+
+  tasks:
+    - name: 'Gather Installed Packages'
+      ansible.builtin.package_facts:
+        manager: auto
+      become: true
+
+    - name: 'Gather Local Services'
+      ansible.builtin.service_facts:
+      become: true

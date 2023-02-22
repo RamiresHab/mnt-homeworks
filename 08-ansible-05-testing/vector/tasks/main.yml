@@ -1,0 +1,14 @@
+---
+# tasks file for vector-role
+- name: Get Vector
+  ansible.builtin.get_url:
+    url: "https://packages.timber.io/{{ vector_package }}/{{ vector_version }}/{{ vector_package }}_{{ vector_version }}-1_amd64.deb"
+    dest: "/tmp/{{ vector_package }}-{{ vector_version }}.deb"
+- name: Install Vector
+  become: true
+  ansible.builtin.apt:
+    deb: "/tmp/{{ vector_package }}-{{ vector_version }}.deb"
+  notify: Start Vector service
+- name: Flush handlers
+  meta: flush_handlers
+
