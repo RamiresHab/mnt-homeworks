@@ -1565,10 +1565,238 @@ INFO     Verifier completed successfully.
 
 1. Добавьте в директорию с vector-role файлы из [директории](./example)
 2. Запустите `docker run --privileged=True -v <path_to_repo>:/opt/vector-role -w /opt/vector-role -it aragast/netology:latest /bin/bash`, где path_to_repo - путь до корня репозитория с vector-role на вашей файловой системе.
+
+```commandline
+➜  08-ansible-05-testing git:(MNT-video) ✗ docker run --privileged=True -v /Users/ro.khabibullin/Projects/netology/mnt-homeworks/08-ansible-05-testing/vector:/opt/vector-role -w /opt/vector-role -it aragast/netology:latest /bin/bash
+[root@23cfdf6c05aa vector-role]# 
+```
+
 3. Внутри контейнера выполните команду `tox`, посмотрите на вывод.
+
+```commandline
+py37-ansible30 create: /opt/vector-role/.tox/py37-ansible30
+py37-ansible30 installdeps: -rtox-requirements.txt, ansible<3.1
+py37-ansible30 installed: ansible==3.0.0,ansible-base==2.10.17,ansible-compat==1.0.0,ansible-lint==5.1.3,arrow==1.2.3,bcrypt==4.0.1,binaryornot==0.4.4,bracex==2.3.post1,cached-property==1.5.2,Cerberus==1.3.2,certifi==2022.12.7,cffi==1.15.1,chardet==5.1.0,charset-normalizer==3.0.1,click==8.1.3,click-help-colors==0.9.1,cookiecutter==2.1.1,cryptography==39.0.1,distro==1.8.0,enrich==1.2.7,idna==3.4,importlib-metadata==6.0.0,Jinja2==3.1.2,jinja2-time==0.2.0,jmespath==1.0.1,lxml==4.9.2,markdown-it-py==2.2.0,MarkupSafe==2.1.2,mdurl==0.1.2,molecule==3.4.0,molecule-podman==1.0.1,packaging==23.0,paramiko==2.12.0,pathspec==0.11.0,pluggy==0.13.1,pycparser==2.21,Pygments==2.14.0,PyNaCl==1.5.0,python-dateutil==2.8.2,python-slugify==8.0.0,PyYAML==5.4.1,requests==2.28.2,rich==13.3.1,ruamel.yaml==0.17.21,ruamel.yaml.clib==0.2.7,selinux==0.2.1,six==1.16.0,subprocess-tee==0.3.5,tenacity==8.2.1,text-unidecode==1.3,typing_extensions==4.5.0,urllib3==1.26.14,wcmatch==8.4.1,yamllint==1.26.3,zipp==3.14.0
+py37-ansible30 run-test-pre: PYTHONHASHSEED='1516432522'
+py37-ansible30 run-test: commands[0] | molecule test -s compatibility --destroy always
+CRITICAL 'molecule/compatibility/molecule.yml' glob failed.  Exiting.
+ERROR: InvocationError for command /opt/vector-role/.tox/py37-ansible30/bin/molecule test -s compatibility --destroy always (exited with code 1)
+```
+
 5. Создайте облегчённый сценарий для `molecule` с драйвером `molecule_podman`. Проверьте его на исполнимость.
+<details>
+<summary><b>➜  vector git:(MNT-video) ✗ molecule test -s molecule_podman</b></summary>
+
+```commandline
+INFO     molecule_podman scenario test matrix: dependency, lint, cleanup, destroy, syntax, create, prepare, converge, idempotence, side_effect, verify, cleanup, destroy
+INFO     Performing prerun with role_name_check=0...
+INFO     Set ANSIBLE_LIBRARY=/Users/ro.khabibullin/.cache/ansible-compat/b0d51c/modules:/Users/ro.khabibullin/.ansible/plugins/modules:/usr/share/ansible/plugins/modules
+INFO     Set ANSIBLE_COLLECTIONS_PATH=/Users/ro.khabibullin/.cache/ansible-compat/b0d51c/collections:/Users/ro.khabibullin/.ansible/collections:/usr/share/ansible/collections
+INFO     Set ANSIBLE_ROLES_PATH=/Users/ro.khabibullin/.cache/ansible-compat/b0d51c/roles:/Users/ro.khabibullin/.ansible/roles:/usr/share/ansible/roles:/etc/ansible/roles
+INFO     Using /Users/ro.khabibullin/.cache/ansible-compat/b0d51c/roles/ramireshab.vector symlink to current repository in order to enable Ansible to find the role using its expected full name.
+INFO     Running molecule_podman > dependency
+WARNING  Skipping, missing the requirements file.
+WARNING  Skipping, missing the requirements file.
+INFO     Running molecule_podman > lint
+./tasks/main.yml
+  14:1      error    too many blank lines (1 > 0)  (empty-lines)
+
+./.tox/py37-ansible30/lib/python3.7/site-packages/ansible_collections/infinidat/infinibox/.gitlab-ci.yml
+  34:10     error    too many spaces after hyphen  (hyphens)
+  35:10     error    too many spaces after hyphen  (hyphens)
+  36:10     error    too many spaces after hyphen  (hyphens)
+  37:10     error    too many spaces after hyphen  (hyphens)
+  38:10     error    too many spaces after hyphen  (hyphens)
+  39:10     error    too many spaces after hyphen  (hyphens)
+
+./.tox/py37-ansible30/lib/python3.7/site-packages/ansible_collections/infinidat/infinibox/playbooks/test_remove_resources.yml
+  206:1     error    too many blank lines (2 > 0)  (empty-lines)
+
+./.tox/py37-ansible30/lib/python3.7/site-packages/ansible_collections/community/sops/tests/integration/targets/lookup_sops/files/hidden-json.yaml
+  2:1       error    syntax error: found character '\t' that cannot start any token (syntax)
+
+./.tox/py37-ansible30/lib/python3.7/site-packages/ansible_collections/community/sops/tests/integration/targets/lookup_sops/files/hidden-binary.yaml
+  2:1       error    syntax error: found character '\t' that cannot start any token (syntax)
+
+./.tox/py37-ansible210/lib/python3.7/site-packages/ansible_collections/infinidat/infinibox/.gitlab-ci.yml
+  34:10     error    too many spaces after hyphen  (hyphens)
+  35:10     error    too many spaces after hyphen  (hyphens)
+  36:10     error    too many spaces after hyphen  (hyphens)
+  37:10     error    too many spaces after hyphen  (hyphens)
+  38:10     error    too many spaces after hyphen  (hyphens)
+  39:10     error    too many spaces after hyphen  (hyphens)
+
+./.tox/py37-ansible210/lib/python3.7/site-packages/ansible_collections/infinidat/infinibox/playbooks/test_remove_resources.yml
+  206:1     error    too many blank lines (2 > 0)  (empty-lines)
+
+./.tox/py37-ansible210/lib/python3.7/site-packages/molecule/cookiecutter/scenario/driver/delegated/{{cookiecutter.molecule_directory}}/{{cookiecutter.scenario_name}}/create.yml
+  2:2       error    syntax error: found character '%' that cannot start any token (syntax)
+
+./.tox/py37-ansible210/lib/python3.7/site-packages/molecule/cookiecutter/scenario/driver/delegated/{{cookiecutter.molecule_directory}}/{{cookiecutter.scenario_name}}/destroy.yml
+  2:2       error    syntax error: found character '%' that cannot start any token (syntax)
+
+./.tox/py37-ansible210/lib/python3.7/site-packages/molecule/cookiecutter/scenario/verifier/ansible/{{cookiecutter.molecule_directory}}/{{cookiecutter.scenario_name}}/verify.yml
+  4:2       error    syntax error: found character '%' that cannot start any token (syntax)
+
+./.tox/py37-ansible210/lib/python3.7/site-packages/molecule/cookiecutter/molecule/{{cookiecutter.role_name}}/{{cookiecutter.molecule_directory}}/{{cookiecutter.scenario_name}}/molecule.yml
+  8:2       error    syntax error: found character '%' that cannot start any token (syntax)
+
+WARNING  Listing 1 violation(s) that are fatal
+syntax-check[specific]: the role 'vector' was not found in /Users/ro.khabibullin/Projects/netology/mnt-homeworks/08-ansible-05-testing/vector/tests/roles:/Users/ro.khabibullin/.cache/ansible-compat/b0d51c/roles:/Users/ro.khabibullin/.ansible/roles:/usr/share/ansible/roles:/etc/ansible/roles:/Users/ro.khabibullin/Projects/netology/mnt-homeworks/08-ansible-05-testing/vector/tests
+tests/test.yml:5:7
+
+
+                  Rule Violation Summary                   
+ count tag                    profile rule associated tags 
+     1 syntax-check[specific] min     core, unskippable    
+
+Failed after : 1 failure(s), 0 warning(s) on 34 files.
+INFO     Running molecule_podman > cleanup
+WARNING  Skipping, cleanup playbook not configured.
+INFO     Running molecule_podman > destroy
+INFO     Sanity checks: 'podman'
+[WARNING]: Error getting vault password file (datatools): The vault password
+file /Users/ro.khabibullin/.vault/datatools_vault was not found
+[WARNING]: Error getting vault password file (getstream): The vault password
+file /Users/ro.khabibullin/.vault/getstream was not found
+
+PLAY [Destroy] *****************************************************************
+
+TASK [Set async_dir for HOME env] **********************************************
+ok: [localhost]
+
+TASK [Destroy molecule instance(s)] ********************************************
+changed: [localhost] => (item={'capabilities': ['SYS_ADMIN'], 'command': '/sbin/init', 'dockerfile': '../resources/Dockerfile.j2', 'env': {'ANSIBLE_USER': 'ansible', 'DEPLOY_GROUP': 'deployer', 'SUDO_GROUP': 'sudo', 'container': 'docker'}, 'image': 'ubuntu:latest', 'name': 'ubuntu_latest', 'privileged': True, 'tmpfs': ['/run', '/tmp'], 'volumes': ['/sys/fs/cgroup:/sys/fs/cgroup']})
+
+TASK [Wait for instance(s) deletion to complete] *******************************
+FAILED - RETRYING: [localhost]: Wait for instance(s) deletion to complete (300 retries left).
+changed: [localhost] => (item={'failed': 0, 'started': 1, 'finished': 0, 'ansible_job_id': '760241757029.77436', 'results_file': '/Users/ro.khabibullin/.ansible_async/760241757029.77436', 'changed': True, 'item': {'capabilities': ['SYS_ADMIN'], 'command': '/sbin/init', 'dockerfile': '../resources/Dockerfile.j2', 'env': {'ANSIBLE_USER': 'ansible', 'DEPLOY_GROUP': 'deployer', 'SUDO_GROUP': 'sudo', 'container': 'docker'}, 'image': 'ubuntu:latest', 'name': 'ubuntu_latest', 'privileged': True, 'tmpfs': ['/run', '/tmp'], 'volumes': ['/sys/fs/cgroup:/sys/fs/cgroup']}, 'ansible_loop_var': 'item'})
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+INFO     Running molecule_podman > syntax
+[WARNING]: Error getting vault password file (datatools): The vault password
+file /Users/ro.khabibullin/.vault/datatools_vault was not found
+[WARNING]: Error getting vault password file (getstream): The vault password
+file /Users/ro.khabibullin/.vault/getstream was not found
+ansible-playbook [core 2.14.2]
+  config file = /Users/ro.khabibullin/.cache/molecule/vector/molecule_podman/ansible.cfg
+  configured module search path = ['/usr/local/lib/python3.11/site-packages/molecule/provisioner/ansible/plugins/modules', '/Users/ro.khabibullin/.cache/molecule/vector/molecule_podman/library', '/Users/ro.khabibullin/Projects/netology/mnt-homeworks/08-ansible-05-testing/vector/library', '/Users/ro.khabibullin/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.11/site-packages/ansible
+  ansible collection location = /Users/ro.khabibullin/.cache/ansible-compat/b0d51c/collections:/Users/ro.khabibullin/.cache/molecule/vector/molecule_podman/collections:/Users/ro.khabibullin/.ansible/collections:/usr/share/ansible/collections:/etc/ansible/collections
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 3.11.1 (main, Dec 23 2022, 09:39:26) [Clang 14.0.0 (clang-1400.0.29.202)] (/usr/local/opt/python@3.11/bin/python3.11)
+  jinja version = 3.1.2
+  libyaml = False
+Using /Users/ro.khabibullin/.cache/molecule/vector/molecule_podman/ansible.cfg as config file
+1 plays in /Users/ro.khabibullin/Projects/netology/mnt-homeworks/08-ansible-05-testing/vector/molecule/resources/playbooks/converge.yml
+
+playbook: /Users/ro.khabibullin/Projects/netology/mnt-homeworks/08-ansible-05-testing/vector/molecule/resources/playbooks/converge.yml
+INFO     Running molecule_podman > create
+[WARNING]: Error getting vault password file (datatools): The vault password
+file /Users/ro.khabibullin/.vault/datatools_vault was not found
+[WARNING]: Error getting vault password file (getstream): The vault password
+file /Users/ro.khabibullin/.vault/getstream was not found
+
+PLAY [Create] ******************************************************************
+
+TASK [get podman executable path] **********************************************
+ok: [localhost]
+
+TASK [save path to executable as fact] *****************************************
+ok: [localhost]
+
+TASK [Set async_dir for HOME env] **********************************************
+ok: [localhost]
+
+TASK [Log into a container registry] *******************************************
+skipping: [localhost] => (item="ubuntu_latest registry username: None specified") 
+skipping: [localhost]
+
+TASK [Check presence of custom Dockerfiles] ************************************
+ok: [localhost] => (item=Dockerfile: ../resources/Dockerfile.j2)
+
+TASK [Create Dockerfiles from image names] *************************************
+changed: [localhost] => (item="Dockerfile: ../resources/Dockerfile.j2; Image: ubuntu:latest")
+
+TASK [Discover local Podman images] ********************************************
+failed: [localhost] (item=ubuntu_latest) => {"ansible_loop_var": "item", "changed": false, "item": {"ansible_index_var": "i", "ansible_loop_var": "item", "changed": true, "checksum": "f2a55a6b663585869c406d23ec64a6edf4c5a7aa", "dest": "/Users/ro.khabibullin/.cache/molecule/vector/molecule_podman/Dockerfile_ubuntu_latest", "diff": [], "failed": false, "gid": 20, "group": "staff", "i": 0, "invocation": {"module_args": {"_original_basename": "Dockerfile.j2", "attributes": null, "backup": false, "checksum": "f2a55a6b663585869c406d23ec64a6edf4c5a7aa", "content": null, "dest": "/Users/ro.khabibullin/.cache/molecule/vector/molecule_podman/Dockerfile_ubuntu_latest", "directory_mode": null, "follow": false, "force": true, "group": null, "local_follow": null, "mode": "0600", "owner": null, "remote_src": null, "selevel": null, "serole": null, "setype": null, "seuser": null, "src": "/Users/ro.khabibullin/.ansible/tmp/ansible-tmp-1677080037.157192-77547-245141596562148/source", "unsafe_writes": false, "validate": null}}, "item": {"capabilities": ["SYS_ADMIN"], "command": "/sbin/init", "dockerfile": "../resources/Dockerfile.j2", "env": {"ANSIBLE_USER": "ansible", "DEPLOY_GROUP": "deployer", "SUDO_GROUP": "sudo", "container": "docker"}, "image": "ubuntu:latest", "name": "ubuntu_latest", "privileged": true, "tmpfs": ["/run", "/tmp"], "volumes": ["/sys/fs/cgroup:/sys/fs/cgroup"]}, "md5sum": "494f081df668e1c263575fc6845e4a2e", "mode": "0600", "owner": "ro.khabibullin", "size": 2199, "src": "/Users/ro.khabibullin/.ansible/tmp/ansible-tmp-1677080037.157192-77547-245141596562148/source", "state": "file", "uid": 503}, "msg": "Unable to gather info for 'molecule_local/ubuntu_latest': Cannot connect to Podman. Please verify your connection to the Linux system using `podman system connection list`, or try `podman machine init` and `podman machine start` to manage a new Linux VM\nError: unable to connect to Podman socket: Get \"http://d/v4.4.1/libpod/_ping\": dial unix ///var/folders/dm/n13q44px2rqcl8mr7bwfjx2h0000gq/T/podman-run--1/podman/podman.sock: connect: no such file or directory\n"}
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=5    changed=1    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0
+
+WARNING  Retrying execution failure 2 of: ansible-playbook --inventory /Users/ro.khabibullin/.cache/molecule/vector/molecule_podman/inventory --skip-tags molecule-notest,notest /usr/local/lib/python3.11/site-packages/molecule_podman/playbooks/create.yml
+CRITICAL Ansible return code was 2, command was: ['ansible-playbook', '--inventory', '/Users/ro.khabibullin/.cache/molecule/vector/molecule_podman/inventory', '--skip-tags', 'molecule-notest,notest', '/usr/local/lib/python3.11/site-packages/molecule_podman/playbooks/create.yml']
+WARNING  An error occurred during the test sequence action: 'create'. Cleaning up.
+INFO     Running molecule_podman > cleanup
+WARNING  Skipping, cleanup playbook not configured.
+INFO     Running molecule_podman > destroy
+[WARNING]: Error getting vault password file (datatools): The vault password
+file /Users/ro.khabibullin/.vault/datatools_vault was not found
+[WARNING]: Error getting vault password file (getstream): The vault password
+file /Users/ro.khabibullin/.vault/getstream was not found
+
+PLAY [Destroy] *****************************************************************
+
+TASK [Set async_dir for HOME env] **********************************************
+ok: [localhost]
+
+TASK [Destroy molecule instance(s)] ********************************************
+changed: [localhost] => (item={'capabilities': ['SYS_ADMIN'], 'command': '/sbin/init', 'dockerfile': '../resources/Dockerfile.j2', 'env': {'ANSIBLE_USER': 'ansible', 'DEPLOY_GROUP': 'deployer', 'SUDO_GROUP': 'sudo', 'container': 'docker'}, 'image': 'ubuntu:latest', 'name': 'ubuntu_latest', 'privileged': True, 'tmpfs': ['/run', '/tmp'], 'volumes': ['/sys/fs/cgroup:/sys/fs/cgroup']})
+
+TASK [Wait for instance(s) deletion to complete] *******************************
+FAILED - RETRYING: [localhost]: Wait for instance(s) deletion to complete (300 retries left).
+changed: [localhost] => (item={'failed': 0, 'started': 1, 'finished': 0, 'ansible_job_id': '308838266667.77621', 'results_file': '/Users/ro.khabibullin/.ansible_async/308838266667.77621', 'changed': True, 'item': {'capabilities': ['SYS_ADMIN'], 'command': '/sbin/init', 'dockerfile': '../resources/Dockerfile.j2', 'env': {'ANSIBLE_USER': 'ansible', 'DEPLOY_GROUP': 'deployer', 'SUDO_GROUP': 'sudo', 'container': 'docker'}, 'image': 'ubuntu:latest', 'name': 'ubuntu_latest', 'privileged': True, 'tmpfs': ['/run', '/tmp'], 'volumes': ['/sys/fs/cgroup:/sys/fs/cgroup']}, 'ansible_loop_var': 'item'})
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+INFO     Pruning extra files from scenario ephemeral directory
+```
+</details>
+
 6. Пропишите правильную команду в `tox.ini` для того чтобы запускался облегчённый сценарий.
+
+```yaml
+commands =
+    {posargs:molecule test -s molecule_podman --destroy always}
+```
+
 8. Запустите команду `tox`. Убедитесь, что всё отработало успешно.
+<details>
+<summary><b>[root@963007cdabc6 vector-role]# tox</b></summary>
+
+```commandline
+py37-ansible210 installed: ansible==2.10.7,ansible-base==2.10.17,ansible-compat==1.0.0,ansible-lint==5.1.3,arrow==1.2.3,bcrypt==4.0.1,binaryornot==0.4.4,bracex==2.3.post1,cached-property==1.5.2,Cerberus==1.3.2,certifi==2022.12.7,cffi==1.15.1,chardet==5.1.0,charset-normalizer==3.0.1,click==8.1.3,click-help-colors==0.9.1,cookiecutter==2.1.1,cryptography==39.0.1,distro==1.8.0,enrich==1.2.7,idna==3.4,importlib-metadata==6.0.0,Jinja2==3.1.2,jinja2-time==0.2.0,jmespath==1.0.1,lxml==4.9.2,markdown-it-py==2.2.0,MarkupSafe==2.1.2,mdurl==0.1.2,molecule==3.4.0,molecule-podman==1.0.1,packaging==23.0,paramiko==2.12.0,pathspec==0.11.0,pluggy==0.13.1,pycparser==2.21,Pygments==2.14.0,PyNaCl==1.5.0,python-dateutil==2.8.2,python-slugify==8.0.0,PyYAML==5.4.1,requests==2.28.2,rich==13.3.1,ruamel.yaml==0.17.21,ruamel.yaml.clib==0.2.7,selinux==0.2.1,six==1.16.0,subprocess-tee==0.3.5,tenacity==8.2.1,text-unidecode==1.3,typing_extensions==4.5.0,urllib3==1.26.14,wcmatch==8.4.1,yamllint==1.26.3,zipp==3.14.0
+py37-ansible210 run-test-pre: PYTHONHASHSEED='2329635104'
+py37-ansible210 run-test: commands[0] | molecule test -s molecule_podman --destroy always
+INFO     molecule_podman scenario test matrix: dependency, lint, cleanup, destroy, syntax, create, prepare, converge, idempotence, side_effect, verify, cleanup, destroy
+INFO     Performing prerun...
+WARNING  Failed to locate command: [Errno 2] No such file or directory: 'git': 'git'
+INFO     Guessed /opt/vector-role as project root directory
+INFO     Using /root/.cache/ansible-lint/b984a4/roles/ramireshab.vector symlink to current repository in order to enable Ansible to find the role using its expected full name.
+INFO     Added ANSIBLE_ROLES_PATH=~/.ansible/roles:/usr/share/ansible/roles:/etc/ansible/roles:/root/.cache/ansible-lint/b984a4/roles
+INFO     Inventory /opt/vector-role/molecule/molecule_podman/../resources/inventory/hosts.yml linked to /root/.cache/molecule/vector-role/molecule_podman/inventory/hosts
+INFO     Inventory /opt/vector-role/molecule/molecule_podman/../resources/inventory/group_vars/ linked to /root/.cache/molecule/vector-role/molecule_podman/inventory/group_vars
+INFO     Inventory /opt/vector-role/molecule/molecule_podman/../resources/inventory/host_vars/ linked to /root/.cache/molecule/vector-role/molecule_podman/inventory/host_vars
+INFO     Running molecule_podman > dependency
+INFO     Running ansible-galaxy collection install --force -v containers.podman:>=1.7.0
+INFO     Running ansible-galaxy collection install --force -v ansible.posix:>=1.3.0
+WARNING  Skipping, missing the requirements file.
+WARNING  Skipping, missing the requirements file.
+INFO     Inventory /opt/vector-role/molecule/molecule_podman/../resources/inventory/hosts.yml linked to /root/.cache/molecule/vector-role/molecule_podman/inventory/hosts
+INFO     Inventory /opt/vector-role/molecule/molecule_podman/../resources/inventory/group_vars/ linked to /root/.cache/molecule/vector-role/molecule_podman/inventory/group_vars
+INFO     Inventory /opt/vector-role/molecule/molecule_podman/../resources/inventory/host_vars/ linked to /root/.cache/molecule/vector-role/molecule_podman/inventory/host_vars
+INFO     Running molecule_podman > lint
+COMMAND: yamllint .
+ansible-lint
+flake8
+
+```
+
+</details>
+
 9. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
 
 После выполнения у вас должно получится два сценария molecule и один tox.ini файл в репозитории. Не забудьте указать в ответе теги решений Tox и Molecule заданий. В качестве решения пришлите ссылку на  ваш репозиторий и скриншоты этапов выполнения задания. 
