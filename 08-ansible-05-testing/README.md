@@ -1793,6 +1793,239 @@ COMMAND: yamllint .
 ansible-lint
 flake8
 
+./.tox/py37-ansible210/lib/python3.7/site-packages/ansible_collections/infinidat/infinibox/.gitlab-ci.yml
+  34:10     error    too many spaces after hyphen  (hyphens)
+  35:10     error    too many spaces after hyphen  (hyphens)
+  36:10     error    too many spaces after hyphen  (hyphens)
+  37:10     error    too many spaces after hyphen  (hyphens)
+  38:10     error    too many spaces after hyphen  (hyphens)
+  39:10     error    too many spaces after hyphen  (hyphens)
+
+./.tox/py37-ansible210/lib/python3.7/site-packages/ansible_collections/infinidat/infinibox/playbooks/test_remove_resources.yml
+  206:1     error    too many blank lines (2 > 0)  (empty-lines)
+
+./.tox/py37-ansible210/lib/python3.7/site-packages/molecule/cookiecutter/molecule/{{cookiecutter.role_name}}/{{cookiecutter.molecule_directory}}/{{cookiecutter.scenario_name}}/molecule.yml
+  8:2       error    syntax error: found character '%' that cannot start any token (syntax)
+
+./.tox/py37-ansible210/lib/python3.7/site-packages/molecule/cookiecutter/scenario/driver/delegated/{{cookiecutter.molecule_directory}}/{{cookiecutter.scenario_name}}/create.yml
+  2:2       error    syntax error: found character '%' that cannot start any token (syntax)
+
+./.tox/py37-ansible210/lib/python3.7/site-packages/molecule/cookiecutter/scenario/driver/delegated/{{cookiecutter.molecule_directory}}/{{cookiecutter.scenario_name}}/destroy.yml
+  2:2       error    syntax error: found character '%' that cannot start any token (syntax)
+
+./.tox/py37-ansible210/lib/python3.7/site-packages/molecule/cookiecutter/scenario/verifier/ansible/{{cookiecutter.molecule_directory}}/{{cookiecutter.scenario_name}}/verify.yml
+  4:2       error    syntax error: found character '%' that cannot start any token (syntax)
+
+./.tox/py37-ansible30/lib/python3.7/site-packages/ansible_collections/community/sops/tests/integration/targets/lookup_sops/files/hidden-binary.yaml
+  2:1       error    syntax error: found character '\t' that cannot start any token (syntax)
+
+./.tox/py37-ansible30/lib/python3.7/site-packages/ansible_collections/community/sops/tests/integration/targets/lookup_sops/files/hidden-json.yaml
+  2:1       error    syntax error: found character '\t' that cannot start any token (syntax)
+
+./.tox/py37-ansible30/lib/python3.7/site-packages/ansible_collections/infinidat/infinibox/.gitlab-ci.yml
+  34:10     error    too many spaces after hyphen  (hyphens)
+  35:10     error    too many spaces after hyphen  (hyphens)
+  36:10     error    too many spaces after hyphen  (hyphens)
+  37:10     error    too many spaces after hyphen  (hyphens)
+  38:10     error    too many spaces after hyphen  (hyphens)
+  39:10     error    too many spaces after hyphen  (hyphens)
+
+./.tox/py37-ansible30/lib/python3.7/site-packages/ansible_collections/infinidat/infinibox/playbooks/test_remove_resources.yml
+  206:1     error    too many blank lines (2 > 0)  (empty-lines)
+
+./.tox/py37-ansible30/lib/python3.7/site-packages/molecule/cookiecutter/molecule/{{cookiecutter.role_name}}/{{cookiecutter.molecule_directory}}/{{cookiecutter.scenario_name}}/molecule.yml
+  8:2       error    syntax error: found character '%' that cannot start any token (syntax)
+
+./.tox/py37-ansible30/lib/python3.7/site-packages/molecule/cookiecutter/scenario/driver/delegated/{{cookiecutter.molecule_directory}}/{{cookiecutter.scenario_name}}/create.yml
+  2:2       error    syntax error: found character '%' that cannot start any token (syntax)
+
+./.tox/py37-ansible30/lib/python3.7/site-packages/molecule/cookiecutter/scenario/driver/delegated/{{cookiecutter.molecule_directory}}/{{cookiecutter.scenario_name}}/destroy.yml
+  2:2       error    syntax error: found character '%' that cannot start any token (syntax)
+
+./.tox/py37-ansible30/lib/python3.7/site-packages/molecule/cookiecutter/scenario/verifier/ansible/{{cookiecutter.molecule_directory}}/{{cookiecutter.scenario_name}}/verify.yml
+  4:2       error    syntax error: found character '%' that cannot start any token (syntax)
+
+./.tox/py39-ansible210/lib/python3.9/site-packages/ansible_collections/infinidat/infinibox/.gitlab-ci.yml
+  34:10     error    too many spaces after hyphen  (hyphens)
+  35:10     error    too many spaces after hyphen  (hyphens)
+  36:10     error    too many spaces after hyphen  (hyphens)
+  37:10     error    too many spaces after hyphen  (hyphens)
+  38:10     error    too many spaces after hyphen  (hyphens)
+  39:10     error    too many spaces after hyphen  (hyphens)
+
+./.tox/py39-ansible210/lib/python3.9/site-packages/ansible_collections/infinidat/infinibox/playbooks/test_remove_resources.yml
+  206:1     error    too many blank lines (2 > 0)  (empty-lines)
+
+./tasks/main.yml
+  14:1      error    too many blank lines (1 > 0)  (empty-lines)
+
+Failed to locate command: [Errno 2] No such file or directory: 'git': 'git'
+Traceback (most recent call last):
+  File "/opt/vector-role/.tox/py37-ansible210/bin/ansible-lint", line 8, in <module>
+    sys.exit(_run_cli_entrypoint())
+  File "/opt/vector-role/.tox/py37-ansible210/lib/python3.7/site-packages/ansiblelint/__main__.py", line 299, in _run_cli_entrypoint
+    sys.exit(main(sys.argv))
+  File "/opt/vector-role/.tox/py37-ansible210/lib/python3.7/site-packages/ansiblelint/__main__.py", line 211, in main
+    from ansiblelint.generate_docs import rules_as_rich, rules_as_rst, rules_as_str
+  File "/opt/vector-role/.tox/py37-ansible210/lib/python3.7/site-packages/ansiblelint/generate_docs.py", line 6, in <module>
+    from rich.console import render_group
+ImportError: cannot import name 'render_group' from 'rich.console' (/opt/vector-role/.tox/py37-ansible210/lib/python3.7/site-packages/rich/console.py)
+/bin/sh: line 2: flake8: command not found
+CRITICAL Lint failed with error code 127
+WARNING  An error occurred during the test sequence action: 'lint'. Cleaning up.
+INFO     Inventory /opt/vector-role/molecule/molecule_podman/../resources/inventory/hosts.yml linked to /root/.cache/molecule/vector-role/molecule_podman/inventory/hosts
+INFO     Inventory /opt/vector-role/molecule/molecule_podman/../resources/inventory/group_vars/ linked to /root/.cache/molecule/vector-role/molecule_podman/inventory/group_vars
+INFO     Inventory /opt/vector-role/molecule/molecule_podman/../resources/inventory/host_vars/ linked to /root/.cache/molecule/vector-role/molecule_podman/inventory/host_vars
+INFO     Running molecule_podman > cleanup
+WARNING  Skipping, cleanup playbook not configured.
+INFO     Inventory /opt/vector-role/molecule/molecule_podman/../resources/inventory/hosts.yml linked to /root/.cache/molecule/vector-role/molecule_podman/inventory/hosts
+INFO     Inventory /opt/vector-role/molecule/molecule_podman/../resources/inventory/group_vars/ linked to /root/.cache/molecule/vector-role/molecule_podman/inventory/group_vars
+INFO     Inventory /opt/vector-role/molecule/molecule_podman/../resources/inventory/host_vars/ linked to /root/.cache/molecule/vector-role/molecule_podman/inventory/host_vars
+INFO     Running molecule_podman > destroy
+INFO     Sanity checks: 'podman'
+
+PLAY [Destroy] *****************************************************************
+
+TASK [Destroy molecule instance(s)] ********************************************
+changed: [localhost] => (item={'capabilities': ['SYS_ADMIN'], 'command': '/sbin/init', 'dockerfile': '../resources/Dockerfile.j2', 'env': {'ANSIBLE_USER': 'ansible', 'DEPLOY_GROUP': 'deployer', 'SUDO_GROUP': 'sudo', 'container': 'docker'}, 'image': 'ubuntu:latest', 'name': 'ubuntu_latest', 'privileged': True, 'tmpfs': ['/run', '/tmp'], 'volumes': ['/sys/fs/cgroup:/sys/fs/cgroup']})
+
+TASK [Wait for instance(s) deletion to complete] *******************************
+changed: [localhost] => (item={'started': 1, 'finished': 0, 'ansible_job_id': '364851636941.111', 'results_file': '/root/.ansible_async/364851636941.111', 'changed': True, 'failed': False, 'item': {'capabilities': ['SYS_ADMIN'], 'command': '/sbin/init', 'dockerfile': '../resources/Dockerfile.j2', 'env': {'ANSIBLE_USER': 'ansible', 'DEPLOY_GROUP': 'deployer', 'SUDO_GROUP': 'sudo', 'container': 'docker'}, 'image': 'ubuntu:latest', 'name': 'ubuntu_latest', 'privileged': True, 'tmpfs': ['/run', '/tmp'], 'volumes': ['/sys/fs/cgroup:/sys/fs/cgroup']}, 'ansible_loop_var': 'item'})
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=2    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+INFO     Pruning extra files from scenario ephemeral directory
+ERROR: InvocationError for command /opt/vector-role/.tox/py37-ansible210/bin/molecule test -s molecule_podman --destroy always (exited with code 1)
+py37-ansible30 installed: ansible==3.0.0,ansible-base==2.10.17,ansible-compat==1.0.0,ansible-lint==5.1.3,arrow==1.2.3,bcrypt==4.0.1,binaryornot==0.4.4,bracex==2.3.post1,cached-property==1.5.2,Cerberus==1.3.2,certifi==2022.12.7,cffi==1.15.1,chardet==5.1.0,charset-normalizer==3.0.1,click==8.1.3,click-help-colors==0.9.1,cookiecutter==2.1.1,cryptography==39.0.1,distro==1.8.0,enrich==1.2.7,idna==3.4,importlib-metadata==6.0.0,Jinja2==3.1.2,jinja2-time==0.2.0,jmespath==1.0.1,lxml==4.9.2,markdown-it-py==2.2.0,MarkupSafe==2.1.2,mdurl==0.1.2,molecule==3.4.0,molecule-podman==1.0.1,packaging==23.0,paramiko==2.12.0,pathspec==0.11.0,pluggy==0.13.1,pycparser==2.21,Pygments==2.14.0,PyNaCl==1.5.0,python-dateutil==2.8.2,python-slugify==8.0.0,PyYAML==5.4.1,requests==2.28.2,rich==13.3.1,ruamel.yaml==0.17.21,ruamel.yaml.clib==0.2.7,selinux==0.2.1,six==1.16.0,subprocess-tee==0.3.5,tenacity==8.2.1,text-unidecode==1.3,typing_extensions==4.5.0,urllib3==1.26.14,wcmatch==8.4.1,yamllint==1.26.3,zipp==3.14.0
+py37-ansible30 run-test-pre: PYTHONHASHSEED='2329635104'
+py37-ansible30 run-test: commands[0] | molecule test -s molecule_podman --destroy always
+INFO     molecule_podman scenario test matrix: dependency, lint, cleanup, destroy, syntax, create, prepare, converge, idempotence, side_effect, verify, cleanup, destroy
+INFO     Performing prerun...
+WARNING  Failed to locate command: [Errno 2] No such file or directory: 'git': 'git'
+INFO     Guessed /opt/vector-role as project root directory
+INFO     Using /root/.cache/ansible-lint/b984a4/roles/ramireshab.vector symlink to current repository in order to enable Ansible to find the role using its expected full name.
+INFO     Added ANSIBLE_ROLES_PATH=~/.ansible/roles:/usr/share/ansible/roles:/etc/ansible/roles:/root/.cache/ansible-lint/b984a4/roles
+INFO     Inventory /opt/vector-role/molecule/molecule_podman/../resources/inventory/hosts.yml linked to /root/.cache/molecule/vector-role/molecule_podman/inventory/hosts
+INFO     Inventory /opt/vector-role/molecule/molecule_podman/../resources/inventory/group_vars/ linked to /root/.cache/molecule/vector-role/molecule_podman/inventory/group_vars
+INFO     Inventory /opt/vector-role/molecule/molecule_podman/../resources/inventory/host_vars/ linked to /root/.cache/molecule/vector-role/molecule_podman/inventory/host_vars
+INFO     Running molecule_podman > dependency
+WARNING  Skipping, missing the requirements file.
+WARNING  Skipping, missing the requirements file.
+INFO     Inventory /opt/vector-role/molecule/molecule_podman/../resources/inventory/hosts.yml linked to /root/.cache/molecule/vector-role/molecule_podman/inventory/hosts
+INFO     Inventory /opt/vector-role/molecule/molecule_podman/../resources/inventory/group_vars/ linked to /root/.cache/molecule/vector-role/molecule_podman/inventory/group_vars
+INFO     Inventory /opt/vector-role/molecule/molecule_podman/../resources/inventory/host_vars/ linked to /root/.cache/molecule/vector-role/molecule_podman/inventory/host_vars
+INFO     Running molecule_podman > lint
+COMMAND: yamllint .
+ansible-lint
+flake8
+
+./.tox/py37-ansible210/lib/python3.7/site-packages/ansible_collections/infinidat/infinibox/.gitlab-ci.yml
+  34:10     error    too many spaces after hyphen  (hyphens)
+  35:10     error    too many spaces after hyphen  (hyphens)
+  36:10     error    too many spaces after hyphen  (hyphens)
+  37:10     error    too many spaces after hyphen  (hyphens)
+  38:10     error    too many spaces after hyphen  (hyphens)
+  39:10     error    too many spaces after hyphen  (hyphens)
+
+./.tox/py37-ansible210/lib/python3.7/site-packages/ansible_collections/infinidat/infinibox/playbooks/test_remove_resources.yml
+  206:1     error    too many blank lines (2 > 0)  (empty-lines)
+
+./.tox/py37-ansible210/lib/python3.7/site-packages/molecule/cookiecutter/molecule/{{cookiecutter.role_name}}/{{cookiecutter.molecule_directory}}/{{cookiecutter.scenario_name}}/molecule.yml
+  8:2       error    syntax error: found character '%' that cannot start any token (syntax)
+
+./.tox/py37-ansible210/lib/python3.7/site-packages/molecule/cookiecutter/scenario/driver/delegated/{{cookiecutter.molecule_directory}}/{{cookiecutter.scenario_name}}/create.yml
+  2:2       error    syntax error: found character '%' that cannot start any token (syntax)
+
+./.tox/py37-ansible210/lib/python3.7/site-packages/molecule/cookiecutter/scenario/driver/delegated/{{cookiecutter.molecule_directory}}/{{cookiecutter.scenario_name}}/destroy.yml
+  2:2       error    syntax error: found character '%' that cannot start any token (syntax)
+
+./.tox/py37-ansible210/lib/python3.7/site-packages/molecule/cookiecutter/scenario/verifier/ansible/{{cookiecutter.molecule_directory}}/{{cookiecutter.scenario_name}}/verify.yml
+  4:2       error    syntax error: found character '%' that cannot start any token (syntax)
+
+./.tox/py37-ansible30/lib/python3.7/site-packages/ansible_collections/community/sops/tests/integration/targets/lookup_sops/files/hidden-binary.yaml
+  2:1       error    syntax error: found character '\t' that cannot start any token (syntax)
+
+./.tox/py37-ansible30/lib/python3.7/site-packages/ansible_collections/community/sops/tests/integration/targets/lookup_sops/files/hidden-json.yaml
+  2:1       error    syntax error: found character '\t' that cannot start any token (syntax)
+
+./.tox/py37-ansible30/lib/python3.7/site-packages/ansible_collections/infinidat/infinibox/.gitlab-ci.yml
+  34:10     error    too many spaces after hyphen  (hyphens)
+  35:10     error    too many spaces after hyphen  (hyphens)
+  36:10     error    too many spaces after hyphen  (hyphens)
+  37:10     error    too many spaces after hyphen  (hyphens)
+  38:10     error    too many spaces after hyphen  (hyphens)
+  39:10     error    too many spaces after hyphen  (hyphens)
+
+./.tox/py37-ansible30/lib/python3.7/site-packages/ansible_collections/infinidat/infinibox/playbooks/test_remove_resources.yml
+  206:1     error    too many blank lines (2 > 0)  (empty-lines)
+
+./.tox/py37-ansible30/lib/python3.7/site-packages/molecule/cookiecutter/molecule/{{cookiecutter.role_name}}/{{cookiecutter.molecule_directory}}/{{cookiecutter.scenario_name}}/molecule.yml
+  8:2       error    syntax error: found character '%' that cannot start any token (syntax)
+
+./.tox/py37-ansible30/lib/python3.7/site-packages/molecule/cookiecutter/scenario/driver/delegated/{{cookiecutter.molecule_directory}}/{{cookiecutter.scenario_name}}/create.yml
+  2:2       error    syntax error: found character '%' that cannot start any token (syntax)
+
+./.tox/py37-ansible30/lib/python3.7/site-packages/molecule/cookiecutter/scenario/driver/delegated/{{cookiecutter.molecule_directory}}/{{cookiecutter.scenario_name}}/destroy.yml
+  2:2       error    syntax error: found character '%' that cannot start any token (syntax)
+
+./.tox/py37-ansible30/lib/python3.7/site-packages/molecule/cookiecutter/scenario/verifier/ansible/{{cookiecutter.molecule_directory}}/{{cookiecutter.scenario_name}}/verify.yml
+  4:2       error    syntax error: found character '%' that cannot start any token (syntax)
+
+./.tox/py39-ansible210/lib/python3.9/site-packages/ansible_collections/infinidat/infinibox/.gitlab-ci.yml
+  34:10     error    too many spaces after hyphen  (hyphens)
+  35:10     error    too many spaces after hyphen  (hyphens)
+  36:10     error    too many spaces after hyphen  (hyphens)
+  37:10     error    too many spaces after hyphen  (hyphens)
+  38:10     error    too many spaces after hyphen  (hyphens)
+  39:10     error    too many spaces after hyphen  (hyphens)
+
+./.tox/py39-ansible210/lib/python3.9/site-packages/ansible_collections/infinidat/infinibox/playbooks/test_remove_resources.yml
+  206:1     error    too many blank lines (2 > 0)  (empty-lines)
+
+./tasks/main.yml
+  14:1      error    too many blank lines (1 > 0)  (empty-lines)
+
+Failed to locate command: [Errno 2] No such file or directory: 'git': 'git'
+Traceback (most recent call last):
+  File "/opt/vector-role/.tox/py37-ansible30/bin/ansible-lint", line 8, in <module>
+    sys.exit(_run_cli_entrypoint())
+  File "/opt/vector-role/.tox/py37-ansible30/lib/python3.7/site-packages/ansiblelint/__main__.py", line 299, in _run_cli_entrypoint
+    sys.exit(main(sys.argv))
+  File "/opt/vector-role/.tox/py37-ansible30/lib/python3.7/site-packages/ansiblelint/__main__.py", line 211, in main
+    from ansiblelint.generate_docs import rules_as_rich, rules_as_rst, rules_as_str
+  File "/opt/vector-role/.tox/py37-ansible30/lib/python3.7/site-packages/ansiblelint/generate_docs.py", line 6, in <module>
+    from rich.console import render_group
+ImportError: cannot import name 'render_group' from 'rich.console' (/opt/vector-role/.tox/py37-ansible30/lib/python3.7/site-packages/rich/console.py)
+/bin/sh: line 2: flake8: command not found
+CRITICAL Lint failed with error code 127
+WARNING  An error occurred during the test sequence action: 'lint'. Cleaning up.
+INFO     Inventory /opt/vector-role/molecule/molecule_podman/../resources/inventory/hosts.yml linked to /root/.cache/molecule/vector-role/molecule_podman/inventory/hosts
+INFO     Inventory /opt/vector-role/molecule/molecule_podman/../resources/inventory/group_vars/ linked to /root/.cache/molecule/vector-role/molecule_podman/inventory/group_vars
+INFO     Inventory /opt/vector-role/molecule/molecule_podman/../resources/inventory/host_vars/ linked to /root/.cache/molecule/vector-role/molecule_podman/inventory/host_vars
+INFO     Running molecule_podman > cleanup
+WARNING  Skipping, cleanup playbook not configured.
+INFO     Inventory /opt/vector-role/molecule/molecule_podman/../resources/inventory/hosts.yml linked to /root/.cache/molecule/vector-role/molecule_podman/inventory/hosts
+INFO     Inventory /opt/vector-role/molecule/molecule_podman/../resources/inventory/group_vars/ linked to /root/.cache/molecule/vector-role/molecule_podman/inventory/group_vars
+INFO     Inventory /opt/vector-role/molecule/molecule_podman/../resources/inventory/host_vars/ linked to /root/.cache/molecule/vector-role/molecule_podman/inventory/host_vars
+INFO     Running molecule_podman > destroy
+INFO     Sanity checks: 'podman'
+
+PLAY [Destroy] *****************************************************************
+
+TASK [Destroy molecule instance(s)] ********************************************
+changed: [localhost] => (item={'capabilities': ['SYS_ADMIN'], 'command': '/sbin/init', 'dockerfile': '../resources/Dockerfile.j2', 'env': {'ANSIBLE_USER': 'ansible', 'DEPLOY_GROUP': 'deployer', 'SUDO_GROUP': 'sudo', 'container': 'docker'}, 'image': 'ubuntu:latest', 'name': 'ubuntu_latest', 'privileged': True, 'tmpfs': ['/run', '/tmp'], 'volumes': ['/sys/fs/cgroup:/sys/fs/cgroup']})
+
+TASK [Wait for instance(s) deletion to complete] *******************************
+changed: [localhost] => (item={'started': 1, 'finished': 0, 'ansible_job_id': '568653061359.223', 'results_file': '/root/.ansible_async/568653061359.223', 'changed': True, 'failed': False, 'item': {'capabilities': ['SYS_ADMIN'], 'command': '/sbin/init', 'dockerfile': '../resources/Dockerfile.j2', 'env': {'ANSIBLE_USER': 'ansible', 'DEPLOY_GROUP': 'deployer', 'SUDO_GROUP': 'sudo', 'container': 'docker'}, 'image': 'ubuntu:latest', 'name': 'ubuntu_latest', 'privileged': True, 'tmpfs': ['/run', '/tmp'], 'volumes': ['/sys/fs/cgroup:/sys/fs/cgroup']}, 'ansible_loop_var': 'item'})
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=2    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+INFO     Pruning extra files from scenario ephemeral directory
+ERROR: InvocationError for command /opt/vector-role/.tox/py37-ansible30/bin/molecule test -s molecule_podman --destroy always (exited with code 1)
+
+
 ```
 
 </details>
