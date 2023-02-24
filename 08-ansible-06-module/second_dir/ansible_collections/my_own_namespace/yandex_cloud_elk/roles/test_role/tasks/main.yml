@@ -1,0 +1,6 @@
+---
+- name: Call my_own_module
+  my_own_module:
+    path: { path_file }
+    content: { content_file }
+# tasks file for test_role

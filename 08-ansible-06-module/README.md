@@ -157,10 +157,46 @@ if __name__ == '__main__':
 
 3. Заполните файл в соответствии с требованиями ansible так, чтобы он выполнял основную задачу: module должен создавать текстовый файл на удалённом хосте по пути, определённом в параметре `path`, с содержимым, определённым в параметре `content`.
 4. Проверьте module на исполняемость локально.
+
+```commandline
+(venv) ➜  ansible git:(devel) ✗ python -m ansible.modules.my_own_module playload.json
+
+{"changed": false, "original_message": "/tmp/text", "message": "Hello", "invocation": {"module_args": {"path": "/tmp/text", "content": "Hello"}}}
+```
+
 5. Напишите single task playbook и используйте module в нём.
 6. Проверьте через playbook на идемпотентность.
+
+```commandline
+(venv) ➜  ansible git:(devel) ✗ ansible-playbook -v site.yaml                       
+[WARNING]: You are running the development version of Ansible. You should only run Ansible from "devel" if you are modifying the Ansible engine, or trying out features
+under development. This is a rapidly changing source of code and can become unstable at any point.
+No config file found; using defaults
+[WARNING]: No inventory was parsed, only implicit localhost is available
+[WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+PLAY [Test module] *********************************************************************************************************************************************************
+
+TASK [Gathering Facts] *****************************************************************************************************************************************************
+ok: [localhost]
+
+TASK [Call my_own_module] **************************************************************************************************************************************************
+ok: [localhost] => {"changed": false, "message": "Hello", "original_message": "/tmp/text"}
+
+PLAY RECAP *****************************************************************************************************************************************************************
+localhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+```
+
 7. Выйдите из виртуального окружения.
 8. Инициализируйте новую collection: `ansible-galaxy collection init my_own_namespace.yandex_cloud_elk`
+
+```commandline
+➜  ansible git:(devel) ✗ ansible-galaxy collection init my_own_namespace.yandex_cloud_elk
+[WARNING]: You are running the development version of Ansible. You should only run Ansible from "devel" if you are modifying the Ansible engine, or trying out features
+under development. This is a rapidly changing source of code and can become unstable at any point.
+- Collection my_own_namespace.yandex_cloud_elk was created successfully
+```
+
 9. В данную collection перенесите свой module в соответствующую директорию.
 10. Single task playbook преобразуйте в single task role и перенесите в collection. У role должны быть default всех параметров module
 11. Создайте playbook для использования этой role.

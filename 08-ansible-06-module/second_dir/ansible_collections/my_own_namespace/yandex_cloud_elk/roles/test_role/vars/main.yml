@@ -1,0 +1,4 @@
+---
+path_file: "/tmp/text"
+content_file: "Hello"
+# vars file for test_role
