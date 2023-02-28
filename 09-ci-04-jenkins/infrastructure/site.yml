@@ -91,7 +91,7 @@
       yum:
         name:
           - git
-          - python3
+          - python38
           - docker-ce
           - docker-ce-cli
           - containerd.io
@@ -103,12 +103,14 @@
         name: pip
         extra_args: --upgrade
     - name: Install Ansible
-      become_user: root
+#      become_user: root
       pip:
         executable: pip3
         name:
           - selinux
           - ansible<3.0
+          - molecule
+          - molecule-docker
         state: present
     - name: Reinstall Selinux
 #      become_user: root

@@ -1,0 +1,18 @@
+pipeline {
+    agent {
+        label'ansible'
+    }
+    stages {
+        stage('Get Distr') {
+            steps {
+                sh 'rm -rf vector'
+                sh 'git clone https://github.com/RamiresHab/vector-molecula vector'
+            }
+        }
+        stage('Test role') {
+            steps {
+                sh 'cd vector && molecule test -s ubuntu_latest'
+            }
+        }
+    }
+}
