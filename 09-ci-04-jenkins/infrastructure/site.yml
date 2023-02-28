@@ -111,7 +111,7 @@
           - ansible<3.0
         state: present
     - name: Reinstall Selinux
-      become_user: root
+#      become_user: root
       pip:
         executable: pip3
         name:
