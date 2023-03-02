@@ -232,10 +232,15 @@ https://github.com/RamiresHab/mnt-homeworks/blob/MNT-video/08-ansible-06-module/
 17. В ответ необходимо прислать ссылки на collection и tar.gz архив, а также скриншоты выполнения пунктов 4, 6, 15 и 16.
 
 https://github.com/RamiresHab/mnt-homeworks/blob/MNT-video/08-ansible-06-module/4.png
+
 https://github.com/RamiresHab/mnt-homeworks/blob/MNT-video/08-ansible-06-module/6.png
+
 https://github.com/RamiresHab/mnt-homeworks/blob/MNT-video/08-ansible-06-module/15.png
+
 https://github.com/RamiresHab/mnt-homeworks/blob/MNT-video/08-ansible-06-module/16.png
+
 https://github.com/RamiresHab/mnt-homeworks/blob/MNT-video/08-ansible-06-module/second_dir/my_own_namespace-yandex_cloud_elk-1.0.0.tar.gz
+
 https://github.com/RamiresHab/my_own_collection
 
 ## Необязательная часть
