@@ -50,9 +50,22 @@
 В качестве ответа пришлите подробные скриншоты по каждому пункту задания:
 
 - файл gitlab-ci.yml;
+
+1. https://github.com/RamiresHab/mnt-homeworks/blob/MNT-video/09-ci-06-gitlab/gitlab-ci.png
+2. https://github.com/RamiresHab/mnt-homeworks/blob/MNT-video/09-ci-06-gitlab/repository/gitlab-ci.yml
+
 - Dockerfile; 
+
+1. https://github.com/RamiresHab/mnt-homeworks/blob/MNT-video/09-ci-06-gitlab/Dockerfile.png
+2. https://github.com/RamiresHab/mnt-homeworks/blob/MNT-video/09-ci-06-gitlab/repository/Dockerfile
+
 - лог успешного выполнения пайплайна;
+
+https://github.com/RamiresHab/mnt-homeworks/blob/MNT-video/09-ci-06-gitlab/pipeline.png
+
 - решённый Issue.
+
+Про Issue в задании для DevOps ничего не было
 
 ### Важно 
 После выполнения задания выключите и удалите все задействованные ресурсы в Yandex Cloud.
