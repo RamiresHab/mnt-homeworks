@@ -198,14 +198,45 @@ under development. This is a rapidly changing source of code and can become unst
 ```
 
 9. В данную collection перенесите свой module в соответствующую директорию.
+
+https://github.com/RamiresHab/my_own_collection/tree/main/plugins/modules
+
 10. Single task playbook преобразуйте в single task role и перенесите в collection. У role должны быть default всех параметров module
+
+https://github.com/RamiresHab/my_own_collection/tree/main/roles/test_role
+
 11. Создайте playbook для использования этой role.
+
+https://github.com/RamiresHab/my_own_collection/blob/main/site.yml
+
 12. Заполните всю документацию по collection, выложите в свой репозиторий, поставьте тег `1.0.0` на этот коммит.
+
+https://github.com/RamiresHab/my_own_collection
+
 13. Создайте .tar.gz этой collection: `ansible-galaxy collection build` в корневой директории collection.
+
+https://github.com/RamiresHab/my_own_collection/blob/main/my_own_namespace-yandex_cloud_elk-1.0.0.tar.gz
+
 14. Создайте ещё одну директорию любого наименования, перенесите туда single task playbook и архив c collection.
+
+https://github.com/RamiresHab/mnt-homeworks/tree/MNT-video/08-ansible-06-module/second_dir/
+
 15. Установите collection из локального архива: `ansible-galaxy collection install <archivename>.tar.gz`
+
+https://github.com/RamiresHab/mnt-homeworks/blob/MNT-video/08-ansible-06-module/15.png
+
 16. Запустите playbook, убедитесь, что он работает.
+
+https://github.com/RamiresHab/mnt-homeworks/blob/MNT-video/08-ansible-06-module/16.png
+
 17. В ответ необходимо прислать ссылки на collection и tar.gz архив, а также скриншоты выполнения пунктов 4, 6, 15 и 16.
+
+https://github.com/RamiresHab/mnt-homeworks/blob/MNT-video/08-ansible-06-module/4.png
+https://github.com/RamiresHab/mnt-homeworks/blob/MNT-video/08-ansible-06-module/6.png
+https://github.com/RamiresHab/mnt-homeworks/blob/MNT-video/08-ansible-06-module/15.png
+https://github.com/RamiresHab/mnt-homeworks/blob/MNT-video/08-ansible-06-module/16.png
+https://github.com/RamiresHab/mnt-homeworks/blob/MNT-video/08-ansible-06-module/second_dir/my_own_namespace-yandex_cloud_elk-1.0.0.tar.gz
+https://github.com/RamiresHab/my_own_collection
 
 ## Необязательная часть
 
