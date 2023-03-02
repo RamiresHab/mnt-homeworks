@@ -1,0 +1,33 @@
+Running with gitlab-runner 15.9.1 (d540b510)
+  on gitlab-runner-56c8dd9b7b-42xz7 yxyjqyCM, system ID: r_NIfgdl7VLYDL
+Preparing the "kubernetes" executor
+00:00
+Using Kubernetes namespace: default
+Using Kubernetes executor with image gcr.io/cloud-builders/kubectl:latest ...
+Using attach strategy to execute scripts...
+Preparing environment
+00:03
+Waiting for pod default/runner-yxyjqycm-project-3-concurrent-0nqhdd to be running, status is Pending
+Running on runner-yxyjqycm-project-3-concurrent-0nqhdd via gitlab-runner-56c8dd9b7b-42xz7...
+Getting source from Git repository
+00:01
+Fetching changes with git depth set to 20...
+Initialized empty Git repository in /builds/gitlab-instance-b4374b3f/netology/.git/
+Created fresh repository.
+Checking out 221a3f6e as detached HEAD (ref is main)...
+Skipping Git submodules setup
+Executing "step_script" stage of the job script
+00:02
+$ kubectl config set-cluster k8s --server="$KUBE_URL" --insecure-skip-tls-verify=true
+Cluster "k8s" set.
+$ kubectl config set-credentials admin --token="$KUBE_TOKEN"
+User "admin" set.
+$ kubectl config set-context default --cluster=k8s --user=admin
+Context "default" created.
+$ kubectl config use-context default
+Switched to context "default".
+$ sed -i "s/__VERSION__/python-api-$CI_COMMIT_SHORT_SHA/" k8s.yaml
+$ kubectl apply -f k8s.yaml
+namespace/netology unchanged
+deployment.apps/netology-deployment created
+Job succeeded
