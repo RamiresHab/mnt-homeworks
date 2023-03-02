@@ -61,7 +61,10 @@
 
 - лог успешного выполнения пайплайна;
 
-https://github.com/RamiresHab/mnt-homeworks/blob/MNT-video/09-ci-06-gitlab/pipeline.png
+1. https://github.com/RamiresHab/mnt-homeworks/blob/MNT-video/09-ci-06-gitlab/pipeline.png
+2. https://github.com/RamiresHab/mnt-homeworks/blob/MNT-video/09-ci-06-gitlab/build.log
+3. https://github.com/RamiresHab/mnt-homeworks/blob/MNT-video/09-ci-06-gitlab/deploy.log
+
 
 - решённый Issue.
 
