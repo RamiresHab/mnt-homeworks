@@ -43,7 +43,7 @@
 
 - решённый Issue.
 
-Про Issue в задании для DevOps ничего не было
+https://github.com/RamiresHab/mnt-homeworks/blob/MNT-video/09-ci-06-gitlab/Issue.png
 
 ### Важно 
 После выполнения задания выключите и удалите все задействованные ресурсы в Yandex Cloud.
